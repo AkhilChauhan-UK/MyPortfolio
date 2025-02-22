@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section class="projects py-5">
+    <div class="container">
+        <h2 class="section-title mb-5">My Projects</h2>
+        <div class="row g-4">
+            {% for project in project_show %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="{% static project.path %}" class="card-img-top" alt="{{ project.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text">
+                            {% if project.title == 'NetFlix-Clone' %}
+                            A Netflix Clone created using HTML and CSS, featuring a simple, static design. It includes a
+                            homepage with a navigation bar, movie thumbnails, and basic hover effects, providing a
+                            visually appealing layout inspired by Netflix.
+                            <br><small class="text-muted">Skills: HTML, CSS</small>
+                            {% elif project.title == 'CRUD Project' %}
+                            A CRUD project is a basic application that allows users to Create, Read, Update, and Delete
+                            data. It demonstrates database operations and is often used for learning backend
+                            development. Examples include task managers, inventory systems, or blog platforms.
+                            <br><small class="text-muted">Skills: HTML, CSS, JavaScript, Django, SQL, Python,
+                                Bootstrap</small>
+                            {% elif project.title == 'Trackip' %}
+                            A tool for tracking and analyzing IP addresses, providing geolocation, security insights,
+                            and user analytics using integrated APIs.
+                            <br><small class="text-muted">Skills: HTML, CSS, Bootstrap, Python, Django, SQL,
+                                JavaScript</small>
+                            {% elif project.title == 'Recipe-Planner' %}
+                            The Recipe Planner project is a web-based application developed using Django for the
+                            backend, PostgreSQL as the database, Docker for containerized deployment, and Bootstrap for
+                            a responsive UI without JavaScript. Key Features: User Authentication: Secure login and
+                            registration using Django's authentication system.
+                            <br><small class="text-muted">Skills: HTML, CSS, JavaScript, Bootstrap, PostgreSQL, Docker,
+                                Django</small>
+
+                            {% endif %}
+                        </p>
+                        <a href="{{ project.link }}" class="btn btn-custom" target="_blank">View Project</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <small>
+                            {% if project.title == 'NetFlix-Clone' %}
+                            Completed: January 2025
+                            {% elif project.title == 'CRUD Project' %}
+                            Completed: January 2025
+                            {% elif project.title == 'Trackip' %}
+                            Completed: January 2025
+                            {% elif project.title == 'Recipe-Planner' %}
+                            Completed: January 2025
+                            {% else %}
+                            Completed: January 2025
+                            {% endif %}
+                        </small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

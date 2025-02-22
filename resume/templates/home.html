@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="hero py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 animate-fade-in">
+                <h1 class="display-4 fw-bold mb-3">Hi, I'm Akhil Chauhan</h1>
+                <h2 class="h3 text-primary mb-4">Backend Developer</h2>
+                <p class="lead mb-4">BCA student at IGNOU with strong backend development skills in Python, Django, REST
+                    API, and Docker. Experienced in frontend technologies (HTML, CSS, JavaScript) and databases (MySQL,
+                    PostgreSQL, MongoDB). Actively building projects and deploying on Vercel.</p>
+                <div class="social-links mb-4">
+                    <a href="https://www.linkedin.com/in/akhil-chauhan-b220a62a7/" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/AkhilChauhan-UK" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/a_k_h_i_l_808/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+                <a href="{% url 'contact' %}" class="btn btn-custom">Get in Touch</a>
+             </div>
+
+            <div class="col-lg-6 d-flex justify-content-center animate-fade-in" style="margin-top: 50px;">
+                <div class="profile-contianer" style="width: 300px;">
+                    <img src="{% static 'images/photo.jpg' %}" alt="Akhil Chauhan" class="img-fluid">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+{% endblock %}
